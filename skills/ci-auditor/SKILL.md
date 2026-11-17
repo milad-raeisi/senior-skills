@@ -26,7 +26,7 @@ If the repo uses a different CI system (GitLab CI, CircleCI, Buildkite, Jenkins)
 
 ## Step 2: Collect and split the data
 
-Run the bundled script from this skill's directory. It uses only the Python standard library and `gh`, and sends GET requests only.
+Run the bundled script from this skill's directory. It needs Python 3.9+ (standard library only) and `gh`, and sends GET requests only.
 
 ```bash
 python3 <this-skill-dir>/scripts/ci_audit.py --runs 150 --top 5 \

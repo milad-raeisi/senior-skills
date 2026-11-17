@@ -159,7 +159,7 @@ score <  threshold  ->  file an issue, leave the code alone
 
 > *Audit this repo's CI: use gh to pull the last 150 CI runs and split each job's time into three parts: waiting in the queue for a machine, setup (checkout, installing dependencies, restoring the cache), and actually running the task. List the 5 slowest jobs and how many seconds each part takes. Give me the report first. Don't change anything.*
 
-Ships with [`ci_audit.py`](skills/ci-auditor/scripts/ci_audit.py): Python standard library plus `gh`, **GET requests only**, with retries for huge runs, matrix grouping, configurable step classification, and offline re-analysis. Real output against [astral-sh/uv](https://github.com/astral-sh/uv)'s public CI (4,301 jobs, abridged):
+Ships with [`ci_audit.py`](skills/ci-auditor/scripts/ci_audit.py): Python 3.9+ standard library plus `gh`, **GET requests only**, with retries for huge runs, matrix grouping, configurable step classification, and offline re-analysis. Real output against [astral-sh/uv](https://github.com/astral-sh/uv)'s public CI (4,301 jobs, abridged):
 
 ```text
 $ python3 skills/ci-auditor/scripts/ci_audit.py --repo astral-sh/uv --min-runs 3
