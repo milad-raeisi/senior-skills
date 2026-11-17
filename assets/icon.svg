@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 512 512" role="img" aria-label="senior-skills icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B2350"/>
+      <stop offset="1" stop-color="#0A0F1F"/>
+    </linearGradient>
+    <linearGradient id="stripes" gradientUnits="userSpaceOnUse" x1="0" y1="126" x2="0" y2="386">
+      <stop offset="0" stop-color="#818CF8"/>
+      <stop offset="0.5" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#stripes)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="136,216 256,126 376,216"/>
+    <polyline points="136,301 256,211 376,301"/>
+    <polyline points="136,386 256,296 376,386"/>
+  </g>
+</svg>

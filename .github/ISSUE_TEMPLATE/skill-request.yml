@@ -1,0 +1,28 @@
+name: Skill request
+description: Propose a new skill or a judgment call agents keep getting wrong
+labels: ["skill-request"]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What do agents do today?
+      description: The junior behavior you keep seeing. A real example helps most.
+    validations:
+      required: true
+  - type: textarea
+    id: senior
+    attributes:
+      label: What would a senior engineer do instead?
+      description: The judgment call, and why it's the right one.
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: The prompt you use today (if any)
+      render: markdown
+  - type: textarea
+    id: prior-art
+    attributes:
+      label: Prior art
+      description: Existing skills, articles, or tools that cover part of this.
