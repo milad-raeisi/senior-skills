@@ -17,6 +17,7 @@ sys.dont_write_bytecode = True  # keep __pycache__ out of the skill folder that 
 SCRIPT =Path(__file__).resolve().parent.parent / "skills" / "ci-auditor" / "scripts" / "ci_audit.py"
 spec = importlib.util.spec_from_file_location("ci_audit", SCRIPT)
 ci_audit = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = ci_audit  # dataclasses look the module up here on Python < 3.14
 spec.loader.exec_module(ci_audit)
 
 
