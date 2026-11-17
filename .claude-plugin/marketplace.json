@@ -1,0 +1,33 @@
+{
+  "name": "senior-skills",
+  "owner": {
+    "name": "Milad Raeisi"
+  },
+  "metadata": {
+    "description": "Staff-engineer judgment for coding agents.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "senior-skills",
+      "source": "./",
+      "description": "Staff-engineer judgment for coding agents: 15 skills including state-machine-hunter, prior-art-scout, bug-triage, finish-the-job, ci-auditor, systematic debugging, TDD, code review, and security review.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Milad Raeisi"
+      },
+      "homepage": "https://github.com/milad-raeisi/senior-skills",
+      "repository": "https://github.com/milad-raeisi/senior-skills",
+      "license": "MIT",
+      "category": "development",
+      "keywords": [
+        "skills",
+        "senior-engineer",
+        "debugging",
+        "tdd",
+        "code-review",
+        "ci"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "senior-skills",
+  "description": "Staff-engineer judgment for coding agents: state machines, prior art, bug triage, finishing the job, CI audits, debugging, TDD, review, and security.",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}

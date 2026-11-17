@@ -1,0 +1,42 @@
+{
+  "name": "senior-skills",
+  "version": "1.0.0",
+  "description": "Staff-engineer judgment for coding agents: state machines, prior art, bug triage, finishing the job, CI audits, debugging, TDD, review, and security.",
+  "author": {
+    "name": "Milad Raeisi",
+    "url": "https://github.com/milad-raeisi"
+  },
+  "homepage": "https://github.com/milad-raeisi/senior-skills",
+  "repository": "https://github.com/milad-raeisi/senior-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "senior-engineer",
+    "debugging",
+    "tdd",
+    "code-review",
+    "ci"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Senior Skills",
+    "shortDescription": "Staff-engineer judgment for coding agents",
+    "longDescription": "Fifteen skills that change how a coding agent works: hunt implicit state machines, research prior art before building, triage bugs by likelihood and severity, finish the whole job, audit CI with data, and debug, test, review, and secure code like a staff engineer.",
+    "developerName": "Milad Raeisi",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Find all of the implicit state machines in this app.",
+      "Audit this repo's CI and tell me where the time goes.",
+      "Triage these bugs and fix only the ones that matter."
+    ],
+    "websiteURL": "https://github.com/milad-raeisi/senior-skills",
+    "brandColor": "#6366F1",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.png"
+  }
+}
