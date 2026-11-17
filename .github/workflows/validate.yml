@@ -1,0 +1,39 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skills and manifests
+        run: python3 scripts/validate_skills.py
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Lint install script
+        run: shellcheck scripts/install.sh
+
+      - name: Install script smoke test
+        run: |
+          ./scripts/install.sh --dir "$RUNNER_TEMP/skills"
+          test -f "$RUNNER_TEMP/skills/senior-engineer/SKILL.md"
+          test "$(ls "$RUNNER_TEMP/skills" | wc -l)" -eq "$(ls skills | wc -l)"
