@@ -40,7 +40,8 @@ jobs:
 
   tests:
     # 3.9 is the python3 that ships with macOS; ci_audit.py must run there.
-    runs-on: ubuntu-latest
+    # Pinned to 24.04: setup-python has no 3.9 build for newer Ubuntu images.
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     strategy:
       fail-fast: false
