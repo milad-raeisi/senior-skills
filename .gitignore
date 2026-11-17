@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# ci-auditor output and raw data from local runs
+ci-audit*.md
+ci-audit*.json
+ci-raw*.json
