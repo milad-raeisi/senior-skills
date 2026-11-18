@@ -5,6 +5,7 @@ __pycache__/
 
 # Local installs of these skills into this checkout (e.g. `npx skills add` run inside the repo)
 .agents/
+.aider-desk/
 skills-lock.json
 
 # npm pack output
