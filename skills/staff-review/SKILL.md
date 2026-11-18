@@ -4,7 +4,7 @@ description: Review code like a staff engineer. Use when asked to review, check,
 license: MIT
 metadata:
   category: craft
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Staff Review

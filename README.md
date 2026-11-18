@@ -61,11 +61,16 @@ It finds the coding agents on your machine (Claude Code, Codex, Cursor, Gemini C
 npx senior-skills --agent claude              # one agent: claude, codex, cursor, gemini, copilot, opencode, windsurf, all
 npx senior-skills --dir ./.agents/skills      # a project folder, shared with your team through git
 npx senior-skills --only bug-triage,ci-auditor
-npx senior-skills --force                     # update; previous copies are kept as <name>.bak-<time>
-npx senior-skills --list                      # see what's inside
+npx senior-skills list                        # see what's inside
 ```
 
-Needs Node.js 20 or newer. Run the same command again with `--force` whenever you want the latest version.
+**Update** to the newest release at any time; new skills are added too:
+
+```bash
+npx senior-skills@latest update
+```
+
+Copies you edited yourself are backed up to `~/.senior-skills/backups/` before they're replaced, and a skill from somewhere else that happens to share a name is left alone. Needs Node.js 20 or newer.
 
 **Prefer a Claude Code plugin?** Install from the marketplace and get updates through `/plugin`:
 
@@ -311,7 +316,7 @@ Every change is checked in CI: skill frontmatter and links, manifest versions, r
 Skill ideas, real-world failure reports, and ports to more agents are all welcome. The bar: **each skill must encode a judgment call that measurably changes what an agent does.** Read [CONTRIBUTING.md](CONTRIBUTING.md), open a [skill request](https://github.com/milad-raeisi/senior-skills/issues/new?template=skill-request.yml), or send a PR.
 
 ```bash
-python3 scripts/validate_skills.py && python3 -m unittest discover -s tests
+python3 scripts/validate_skills.py && python3 -m unittest discover -s tests && node --test tests/cli.test.mjs
 ```
 
 ## 🙏 Standing on the shoulders of giants

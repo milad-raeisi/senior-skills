@@ -4,7 +4,7 @@ description: Test-first development that produces tests worth keeping. Use when 
 license: MIT
 metadata:
   category: craft
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Test-Driven Development

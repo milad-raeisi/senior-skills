@@ -4,7 +4,7 @@ description: Audit GitHub Actions CI speed with data instead of guesses. Use whe
 license: MIT
 metadata:
   category: senior-five
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # CI Auditor

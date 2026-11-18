@@ -4,7 +4,7 @@ description: The operating system for staff-level software engineering. Use at t
 license: MIT
 metadata:
   category: flagship
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Senior Engineer

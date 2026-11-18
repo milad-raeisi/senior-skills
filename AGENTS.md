@@ -10,6 +10,7 @@ Start with `skills/senior-engineer/SKILL.md`; its routing table says which skill
 
 - Validate all skills and manifests: `python3 scripts/validate_skills.py`
 - Unit tests: `python3 -m unittest discover -s tests -v`
+- CLI tests: `node --test tests/cli.test.mjs`
 - Try the CI auditor offline: `python3 skills/ci-auditor/scripts/ci_audit.py --from-raw <file>` (create the file with `--save-raw`)
 - Install locally for testing: `./scripts/install.sh --agent claude --link`
 - Try the npx installer from the checkout: `node bin/senior-skills.mjs --list` (or `--dir <scratch-dir>` to test an install)
