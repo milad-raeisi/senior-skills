@@ -27,7 +27,7 @@ description: What it does and when to use it, with concrete trigger phrases. One
 license: MIT
 metadata:
   category: craft              # flagship, senior-five, or craft
-  version: "1.0.0"             # equals the plugin version
+  version: "1.1.0"             # equals the plugin version
 ---
 ```
 

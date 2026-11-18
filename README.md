@@ -13,6 +13,7 @@
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-6366F1?style=flat-square"></a>
   <a href="#-all-15-skills"><img alt="15 skills" src="https://img.shields.io/badge/skills-15-22D3EE?style=flat-square"></a>
   <a href="https://agentskills.io"><img alt="Agent Skills open standard" src="https://img.shields.io/badge/Agent%20Skills-open%20standard-34D399?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/senior-skills"><img alt="npm" src="https://img.shields.io/npm/v/senior-skills?style=flat-square&color=CB3837&label=npx%20senior-skills"></a>
   <a href="#-quick-start"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-D97757?style=flat-square"></a>
   <a href="https://github.com/milad-raeisi/senior-skills/actions/workflows/validate.yml"><img alt="validate" src="https://img.shields.io/github/actions/workflow/status/milad-raeisi/senior-skills/validate.yml?branch=main&style=flat-square&label=validate"></a>
   <a href="https://github.com/milad-raeisi/senior-skills/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/milad-raeisi/senior-skills?style=flat-square&color=FBBF24"></a>
@@ -48,31 +49,41 @@ The model isn't the bottleneck. **The instructions are.** senior-skills replaces
 
 ## ⚡ Quick start
 
-**Claude Code**, via the plugin marketplace:
+One command. No clone, no fork:
+
+```bash
+npx senior-skills
+```
+
+It finds the coding agents on your machine (Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Windsurf) and installs all 15 skills for each one. Skills you already have are never overwritten silently.
+
+```bash
+npx senior-skills --agent claude              # one agent: claude, codex, cursor, gemini, copilot, opencode, windsurf, all
+npx senior-skills --dir ./.agents/skills      # a project folder, shared with your team through git
+npx senior-skills --only bug-triage,ci-auditor
+npx senior-skills --force                     # update; previous copies are kept as <name>.bak-<time>
+npx senior-skills --list                      # see what's inside
+```
+
+Needs Node.js 20 or newer. Run the same command again with `--force` whenever you want the latest version.
+
+**Prefer a Claude Code plugin?** Install from the marketplace and get updates through `/plugin`:
 
 ```text
 /plugin marketplace add milad-raeisi/senior-skills
 /plugin install senior-skills@senior-skills
 ```
 
-**Any agent** (Codex, Cursor, Gemini CLI, Copilot, OpenCode, Windsurf, and many more) via the open [`skills`](https://github.com/vercel-labs/skills) CLI:
+<details>
+<summary><b>More ways to install</b>: the open skills CLI, Gemini CLI extension, install script, no-install prompts</summary>
+
+<br>
+
+**The open [`skills`](https://github.com/vercel-labs/skills) CLI**, which supports many more agents:
 
 ```bash
 npx skills add milad-raeisi/senior-skills
 ```
-
-**Install script**, which copies or symlinks the skills into your agent's skills folder:
-
-```bash
-git clone https://github.com/milad-raeisi/senior-skills && cd senior-skills
-./scripts/install.sh --agent claude          # codex | cursor | gemini | copilot | opencode | windsurf | all
-./scripts/install.sh --dir ./.agents/skills  # or any folder, e.g. project-level skills
-```
-
-<details>
-<summary><b>More ways to install</b>: Gemini CLI extension, curl one-liner, selected skills only, no-install prompts</summary>
-
-<br>
 
 **Gemini CLI extension** (loads the senior-engineer principles into every session):
 
@@ -80,21 +91,14 @@ git clone https://github.com/milad-raeisi/senior-skills && cd senior-skills
 gemini extensions install https://github.com/milad-raeisi/senior-skills
 ```
 
-**One-liner** (clones to a temp folder, installs, cleans up):
+**Install script**, for a local clone (add `--link` to symlink, so `git pull` keeps you updated):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/milad-raeisi/senior-skills/main/scripts/install.sh | bash -s -- --agent all
+git clone https://github.com/milad-raeisi/senior-skills && cd senior-skills
+./scripts/install.sh --agent claude          # codex | cursor | gemini | copilot | opencode | windsurf | all
 ```
 
-**Only some skills:**
-
-```bash
-./scripts/install.sh --only bug-triage,ci-auditor,finish-the-job
-```
-
-**Stay in sync with `git pull`:** add `--link` to symlink instead of copy.
-
-Existing skills with the same name are never overwritten silently: they're skipped, or with `--force` moved to `<name>.bak-<timestamp>`.
+Or without Node.js: `curl -fsSL https://raw.githubusercontent.com/milad-raeisi/senior-skills/main/scripts/install.sh | bash -s -- --agent all`
 
 **No agent at all?** Paste the prompts from [`prompts/the-senior-five.md`](prompts/the-senior-five.md) into any chat.
 
@@ -248,8 +252,9 @@ senior-skills/
 │   ├── finish-the-job/
 │   ├── ci-auditor/                 # + scripts/ci_audit.py
 │   └── ...                         # 9 core craft skills
+├── bin/senior-skills.mjs           # the `npx senior-skills` installer (no dependencies)
 ├── prompts/the-senior-five.md      # copy-paste versions for any chat
-├── scripts/install.sh              # multi-agent installer
+├── scripts/install.sh              # the same installer in bash, for clones and curl
 ├── scripts/validate_skills.py      # frontmatter, links, manifests, routing
 ├── tests/                          # unit tests for ci_audit.py
 ├── .claude-plugin/                 # Claude Code plugin + marketplace
@@ -257,7 +262,7 @@ senior-skills/
 └── gemini-extension.json           # Gemini CLI extension
 ```
 
-Every change is checked in CI: skill frontmatter and links, manifest versions, routing coverage, unit tests, `shellcheck`, and an install smoke test.
+Every change is checked in CI: skill frontmatter and links, manifest versions, routing coverage, unit tests on Python 3.9 to 3.14, `shellcheck`, the npm package contents, and real `npx` and shell install runs.
 
 ---
 

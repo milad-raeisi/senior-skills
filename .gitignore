@@ -3,6 +3,13 @@ __pycache__/
 .venv/
 .DS_Store
 
+# Local installs of these skills into this checkout (e.g. `npx skills add` run inside the repo)
+.agents/
+skills-lock.json
+
+# npm pack output
+*.tgz
+
 # ci-auditor output and raw data from local runs
 ci-audit*.md
 ci-audit*.json

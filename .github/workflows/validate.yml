@@ -38,6 +38,37 @@ jobs:
           test -f "$RUNNER_TEMP/skills/senior-engineer/SKILL.md"
           test "$(ls "$RUNNER_TEMP/skills" | wc -l)" -eq "$(ls skills | wc -l)"
 
+  npm-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 24]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Package contains only bin/ and skills/ (plus README, LICENSE)
+        run: |
+          npm pack --dry-run --json > "$RUNNER_TEMP/pack.json"
+          node -e '
+            const files = require(process.argv[1])[0].files.map((f) => f.path);
+            const bad = files.filter((p) => !/^(bin\/|skills\/|package\.json$|README\.md$|LICENSE$)/.test(p) || p.includes("__pycache__"));
+            if (!files.includes("bin/senior-skills.mjs") || bad.length) { console.error("Unexpected package contents:", bad); process.exit(1); }
+            console.log(files.length + " files OK");
+          ' "$RUNNER_TEMP/pack.json"
+
+      - name: npx install smoke test
+        run: |
+          npm pack --pack-destination "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/home/.claude"
+          HOME="$RUNNER_TEMP/home" npx --yes --package="$RUNNER_TEMP/senior-skills-$(node -p 'require("./package.json").version').tgz" senior-skills
+          test "$(ls "$RUNNER_TEMP/home/.claude/skills" | wc -l)" -eq "$(ls skills | wc -l)"
+
   tests:
     # 3.9 is the python3 that ships with macOS; ci_audit.py must run there.
     # Pinned to 24.04: setup-python has no 3.9 build for newer Ubuntu images.
