@@ -49,28 +49,110 @@ The model isn't the bottleneck. **The instructions are.** senior-skills replaces
 
 ## ⚡ Quick start
 
-One command. No clone, no fork:
+<p align="center">
+  <img src="assets/quickstart.svg" alt="Step 1, install: npx senior-skills. Step 2, update: npx senior-skills@latest update." width="100%">
+</p>
+
+> [!TIP]
+> **Install** with one command. No clone, no fork, no account.
+>
+> ```bash
+> npx senior-skills
+> ```
+>
+> It finds the coding agents on your machine (Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Windsurf) and gives each one all 15 skills. Then restart your agent.
+
+> [!IMPORTANT]
+> **Update** whenever you like. New skills and improvements arrive with one command:
+>
+> ```bash
+> npx senior-skills@latest update
+> ```
+>
+> Keep the `@latest`: it makes `npx` fetch the newest release instead of reusing a copy it cached earlier.
+
+<details>
+<summary><b>👋 New to the terminal? A step-by-step guide (about 2 minutes)</b></summary>
+
+<br>
+
+**1. Open a terminal.** On macOS, open **Terminal** (press <kbd>⌘</kbd> + <kbd>Space</kbd> and type "Terminal"). On Windows, open **PowerShell**. On Linux, open your usual terminal.
+
+**2. Check that Node.js is installed.** Type this and press <kbd>Enter</kbd>:
+
+```bash
+node --version
+```
+
+You should see `v20` or higher, for example `v22.11.0`. If you see `command not found` or a lower number, install the **LTS** version from [nodejs.org](https://nodejs.org), then close and reopen the terminal. `npx` comes with Node.js, so there's nothing else to install.
+
+**3. Install the skills.**
 
 ```bash
 npx senior-skills
 ```
 
-It finds the coding agents on your machine (Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Windsurf) and installs all 15 skills for each one. Skills you already have are never overwritten silently.
+The first time, npm may ask `Ok to proceed? (y)`. Press <kbd>Enter</kbd>. You'll see one line for each agent it found:
 
-```bash
-npx senior-skills --agent claude              # one agent: claude, codex, cursor, gemini, copilot, opencode, windsurf, all
-npx senior-skills --dir ./.agents/skills      # a project folder, shared with your team through git
-npx senior-skills --only bug-triage,ci-auditor
-npx senior-skills list                        # see what's inside
+```text
+senior-skills 1.2.0: installing 15 skill(s)
+
+  ✓ Claude Code     ~/.claude/skills  (15 added)
+  ✓ Cursor          ~/.cursor/skills  (15 added)
 ```
 
-**Update** to the newest release at any time; new skills are added too:
+**4. Restart your agent.** Close and reopen Claude Code, Cursor, or whichever agent you use, so it loads the new skills.
 
-```bash
-npx senior-skills@latest update
-```
+**5. Try it.** Open a project and ask your agent something like *"Find the bugs that matter in this project"* or *"Audit this repo's CI"*. You don't need to name a skill; the right one loads by itself.
 
-Copies you edited yourself are backed up to `~/.senior-skills/backups/` before they're replaced, and a skill from somewhere else that happens to share a name is left alone. Needs Node.js 20 or newer.
+**6. Stay up to date.** Every now and then, run `npx senior-skills@latest update`.
+
+</details>
+
+<details>
+<summary><b>🧭 All commands and options</b></summary>
+
+<br>
+
+| You want to | Run |
+|---|---|
+| Install for every agent on this machine | `npx senior-skills` |
+| Update to the newest release | `npx senior-skills@latest update` |
+| Install for one agent only | `npx senior-skills --agent claude`<br><sub>also `codex`, `cursor`, `gemini`, `copilot`, `opencode`, `windsurf`, or `all`</sub> |
+| Install into a project, shared with your team through git | `npx senior-skills --dir ./.agents/skills` |
+| Install only some skills | `npx senior-skills --only bug-triage,ci-auditor` |
+| See which skills are included | `npx senior-skills list` |
+| See every option | `npx senior-skills --help` |
+
+</details>
+
+<details>
+<summary><b>🛡️ Is it safe? What it does to your files</b></summary>
+
+<br>
+
+- It only writes the 15 senior-skills folders into your agents' skills folders, such as `~/.claude/skills`. Your other skills are never modified.
+- `install` never overwrites: if a skill is already there, it is kept.
+- `update` replaces only copies that came from senior-skills. If you edited one yourself, your version is saved to `~/.senior-skills/backups/<time>/` first.
+- A different skill that happens to have the same name is left alone unless you add `--force`.
+- It has no dependencies, collects no data, and makes no network calls of its own; npm only downloads the package. The whole installer is one readable file: [`bin/senior-skills.mjs`](bin/senior-skills.mjs).
+
+</details>
+
+<details>
+<summary><b>🧰 Troubleshooting</b></summary>
+
+<br>
+
+| You see | What to do |
+|---|---|
+| `command not found: npx` or `node` | Install Node.js 20 or newer from [nodejs.org](https://nodejs.org), then open a new terminal. |
+| `could not determine executable to run` | An old copy is installed in the folder you're in, or in a folder above it. Run `npx senior-skills@latest`, which always uses the published version. |
+| The skills don't show up in your agent | Restart the agent, then check that the folder the installer printed exists. |
+| `Some installed skills differ from this version and were kept` | You already had an older or edited copy. Run `npx senior-skills@latest update`. |
+| Something else | [Open an issue](https://github.com/milad-raeisi/senior-skills/issues/new/choose) with the command you ran and what you saw. |
+
+</details>
 
 **Prefer a Claude Code plugin?** Install from the marketplace and get updates through `/plugin`:
 
