@@ -27,6 +27,7 @@ MANIFESTS = [
     ".codex-plugin/plugin.json",
     ".cursor-plugin/plugin.json",
     "gemini-extension.json",
+    "package.json",
 ]
 
 errors: list[str] = []

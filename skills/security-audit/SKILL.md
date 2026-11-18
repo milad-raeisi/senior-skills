@@ -4,7 +4,7 @@ description: Focused security pass for code changes and codebases. Use when code
 license: MIT
 metadata:
   category: craft
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Security Audit

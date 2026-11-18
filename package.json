@@ -1,0 +1,40 @@
+{
+  "name": "senior-skills",
+  "version": "1.1.0",
+  "description": "Stop prompting your AI like an intern. 15 Agent Skills that give Claude Code, Codex, Cursor, Gemini CLI and Copilot a staff engineer's judgment.",
+  "bin": {
+    "senior-skills": "bin/senior-skills.mjs"
+  },
+  "files": [
+    "bin/",
+    "skills/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "claude-skills",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "ai-agents",
+    "coding-agents",
+    "senior-engineer",
+    "code-review",
+    "debugging",
+    "tdd"
+  ],
+  "homepage": "https://github.com/milad-raeisi/senior-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milad-raeisi/senior-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/milad-raeisi/senior-skills/issues"
+  },
+  "author": "Milad Raeisi",
+  "license": "MIT"
+}

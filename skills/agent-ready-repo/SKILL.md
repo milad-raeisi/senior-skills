@@ -4,7 +4,7 @@ description: Make a codebase easy and safe for AI coding agents (agent experienc
 license: MIT
 metadata:
   category: craft
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Agent-Ready Repo

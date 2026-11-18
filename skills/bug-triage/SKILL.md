@@ -4,7 +4,7 @@ description: Prioritize bugs and review findings by likelihood times severity be
 license: MIT
 metadata:
   category: senior-five
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Bug Triage

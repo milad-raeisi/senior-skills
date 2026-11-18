@@ -4,7 +4,7 @@ description: Verification gate before any claim of success. Use right before say
 license: MIT
 metadata:
   category: craft
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Evidence Before Claims

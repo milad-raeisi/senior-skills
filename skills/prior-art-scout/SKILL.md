@@ -4,7 +4,7 @@ description: Research how open-source projects already solved a problem before b
 license: MIT
 metadata:
   category: senior-five
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Prior-Art Scout

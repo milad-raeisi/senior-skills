@@ -12,6 +12,7 @@ Start with `skills/senior-engineer/SKILL.md`; its routing table says which skill
 - Unit tests: `python3 -m unittest discover -s tests -v`
 - Try the CI auditor offline: `python3 skills/ci-auditor/scripts/ci_audit.py --from-raw <file>` (create the file with `--save-raw`)
 - Install locally for testing: `./scripts/install.sh --agent claude --link`
+- Try the npx installer from the checkout: `node bin/senior-skills.mjs --list` (or `--dir <scratch-dir>` to test an install)
 
 Run the validator and tests before finishing any change.
 
@@ -20,7 +21,8 @@ Run the validator and tests before finishing any change.
 - `skills/<name>/SKILL.md`: one skill per folder; the folder name equals the `name` in frontmatter.
 - `skills/<name>/references/`: long material loaded only when the skill points to it.
 - `skills/<name>/scripts/`: deterministic helpers; Python standard library only.
-- `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `gemini-extension.json`: per-agent manifests. Keep their `version` fields equal.
+- `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `gemini-extension.json`, `package.json`: per-agent manifests and the npm package. Keep their `version` fields equal.
+- `bin/senior-skills.mjs`: the `npx senior-skills` installer; Node.js standard library only.
 - `prompts/`: copy-paste prompt versions for chat UIs without skill support.
 
 ## Conventions for skills

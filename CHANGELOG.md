@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-11-18
+
+### Added
+
+- `npx senior-skills`: a dependency-free Node.js installer published to npm. It detects the coding agents on the machine and installs every skill for each, with `--agent`, `--dir`, `--only`, `--force`, and `--list`. No clone or fork needed.
+- CI checks the npm package contents and runs the installer through `npx`.
+
+### Changed
+
+- README quick start now leads with `npx senior-skills`.
+
 ## [1.0.0] - 2026-11-17
 
 ### Added
