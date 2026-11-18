@@ -4,7 +4,7 @@ description: Delegate work to subagents effectively and safely. Use when a task 
 license: MIT
 metadata:
   category: craft
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Parallel Agents

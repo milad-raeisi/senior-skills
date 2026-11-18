@@ -4,7 +4,7 @@ description: Root-cause-first debugging. Use for any bug, failing or flaky test,
 license: MIT
 metadata:
   category: craft
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Systematic Debugging

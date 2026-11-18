@@ -4,7 +4,7 @@ description: Find every implicit state machine in an app and make it explicit wi
 license: MIT
 metadata:
   category: senior-five
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # State Machine Hunter

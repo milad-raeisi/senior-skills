@@ -9,7 +9,8 @@
 #   ./scripts/install.sh --only bug-triage,ci-auditor
 #
 # Existing skills with the same name are skipped unless --force is given; with --force
-# they are moved to <name>.bak-<timestamp> first, never deleted.
+# they are moved to ~/.senior-skills/backups/<timestamp>/ first (outside every skills
+# folder, so agents never load them), never deleted.
 #
 # Works from a clone, or piped from curl (it then clones the repo into a temp directory):
 #   curl -fsSL https://raw.githubusercontent.com/milad-raeisi/senior-skills/main/scripts/install.sh | bash -s -- --agent all
@@ -115,8 +116,10 @@ for dest in "${dirs[@]}"; do
         skipped=$((skipped + 1))
         continue
       fi
-      mv "$target" "$target.bak-$stamp"
-      echo "  moved existing $name to $name.bak-$stamp"
+      backup="$HOME/.senior-skills/backups/$stamp/$(printf '%s' "${dest#"$HOME"/}" | tr -c 'A-Za-z0-9' '_')"
+      mkdir -p "$backup"
+      mv "$target" "$backup/$name"
+      echo "  backed up existing $name to $backup/$name"
     fi
     if [[ "$mode" == "link" ]]; then
       ln -s "$src_root/skills/$name" "$target"

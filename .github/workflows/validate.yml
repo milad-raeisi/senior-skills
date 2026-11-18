@@ -62,6 +62,9 @@ jobs:
             console.log(files.length + " files OK");
           ' "$RUNNER_TEMP/pack.json"
 
+      - name: CLI tests
+        run: node --test tests/cli.test.mjs
+
       - name: npx install smoke test
         run: |
           npm pack --pack-destination "$RUNNER_TEMP"

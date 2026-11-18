@@ -4,7 +4,7 @@ description: Completion discipline for long or multi-step work. Keep going until
 license: MIT
 metadata:
   category: senior-five
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Finish the Job

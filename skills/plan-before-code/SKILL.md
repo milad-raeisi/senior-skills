@@ -4,7 +4,7 @@ description: Turn a fuzzy or multi-part request into a precise, verifiable plan 
 license: MIT
 metadata:
   category: craft
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Plan Before Code
