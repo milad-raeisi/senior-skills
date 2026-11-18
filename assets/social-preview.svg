@@ -9,11 +9,6 @@
       <stop offset="0.55" stop-color="#22D3EE"/>
       <stop offset="1" stop-color="#34D399"/>
     </linearGradient>
-    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#818CF8"/>
-      <stop offset="0.5" stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#34D399"/>
-    </linearGradient>
     <linearGradient id="stripes" gradientUnits="userSpaceOnUse" x1="0" y1="62" x2="0" y2="110">
       <stop offset="0" stop-color="#818CF8"/>
       <stop offset="0.5" stop-color="#22D3EE"/>
@@ -36,7 +31,6 @@
   <rect width="1280" height="640" fill="url(#grid)"/>
   <rect width="1280" height="640" fill="url(#glow-a)"/>
   <rect width="1280" height="640" fill="url(#glow-b)"/>
-  <rect width="1280" height="6" fill="url(#rule)"/>
 
   <!-- brand mark -->
   <g fill="none" stroke="url(#stripes)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">

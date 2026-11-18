@@ -72,6 +72,20 @@ jobs:
           HOME="$RUNNER_TEMP/home" npx --yes --package="$RUNNER_TEMP/senior-skills-$(node -p 'require("./package.json").version').tgz" senior-skills
           test "$(ls "$RUNNER_TEMP/home/.claude/skills" | wc -l)" -eq "$(ls skills | wc -l)"
 
+  cli-windows:
+    # The README tells Windows users to run npx senior-skills in PowerShell.
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: CLI tests
+        run: node --test tests/cli.test.mjs
+
   tests:
     # 3.9 is the python3 that ships with macOS; ci_audit.py must run there.
     # Pinned to 24.04: setup-python has no 3.9 build for newer Ubuntu images.

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="qs-title qs-desc">
+  <title id="qs-title">Two commands: install and update</title>
+  <desc id="qs-desc">Step 1, install: npx senior-skills finds your coding agents and installs all 15 skills. Step 2, update: npx senior-skills@latest update gets the newest release and backs up your edits. Requires Node.js 20 or newer. No clone, no fork.</desc>
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1222"/>
+      <stop offset="1" stop-color="#111a33"/>
+    </linearGradient>
+    <linearGradient id="install-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06302B"/>
+      <stop offset="1" stop-color="#0A1F24"/>
+    </linearGradient>
+    <linearGradient id="update-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3A2405"/>
+      <stop offset="1" stop-color="#22180B"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#FFFFFF" stroke-opacity="0.035"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1280" height="360" rx="22"/></clipPath>  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="360" fill="url(#card)"/>
+    <rect width="1280" height="360" fill="url(#grid)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1279" height="359" rx="22" fill="none" stroke="#1E293B"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif">
+    <text x="48" y="52" font-size="14" font-weight="700" letter-spacing="3.2" fill="#94A3B8">TWO COMMANDS. THAT'S THE WHOLE SETUP.</text>
+
+    <!-- Step 1: install -->
+    <rect x="40" y="76" width="586" height="212" rx="18" fill="url(#install-bg)" stroke="#10B981" stroke-opacity="0.55"/>
+    <circle cx="86" cy="124" r="20" fill="#10B981"/>
+    <text x="86" y="131" text-anchor="middle" font-size="20" font-weight="800" fill="#022C22">1</text>
+    <text x="120" y="122" font-size="28" font-weight="800" fill="#ECFDF5">Install</text>
+    <text x="120" y="146" font-size="15" fill="#6EE7B7">once, on any machine</text>
+    <rect x="64" y="170" width="538" height="60" rx="12" fill="#021714" stroke="#10B981" stroke-opacity="0.35"/>
+    <text x="88" y="208" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24"><tspan fill="#34D399">$</tspan><tspan fill="#F0FDF4"> npx senior-skills</tspan></text>
+    <text x="64" y="264" font-size="16" fill="#A7F3D0">Finds your coding agents and gives each one all 15 skills.</text>
+
+    <!-- Step 2: update -->
+    <rect x="654" y="76" width="586" height="212" rx="18" fill="url(#update-bg)" stroke="#F59E0B" stroke-opacity="0.55"/>
+    <circle cx="700" cy="124" r="20" fill="#F59E0B"/>
+    <text x="700" y="131" text-anchor="middle" font-size="20" font-weight="800" fill="#2A1503">2</text>
+    <text x="734" y="122" font-size="28" font-weight="800" fill="#FFFBEB">Update</text>
+    <text x="734" y="146" font-size="15" fill="#FCD34D">any time, to the newest release</text>
+    <rect x="678" y="170" width="538" height="60" rx="12" fill="#1A1006" stroke="#F59E0B" stroke-opacity="0.35"/>
+    <text x="702" y="207" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22"><tspan fill="#FBBF24">$</tspan><tspan fill="#FFFBEB"> npx senior-skills@latest update</tspan></text>
+    <text x="678" y="264" font-size="16" fill="#FDE68A">Refreshes every copy. Anything you edited is backed up first.</text>
+
+    <text x="640" y="326" text-anchor="middle" font-size="15" fill="#64748B">Node.js 20+   ·   no clone, no fork   ·   Claude Code · Codex · Cursor · Gemini CLI · Copilot · OpenCode · Windsurf</text>
+  </g>
+</svg>
